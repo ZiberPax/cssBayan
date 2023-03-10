@@ -1,0 +1,47 @@
+:root {
+  --sage: #A3A380;
+  --vanilla: #D6CE93;
+  --biege: #EFEBCE;
+  --buff: #D8A48F;
+  --old-rose: #BB8588;
+}
+
+*, 
+*::after,
+*::before {
+  margin: 0;
+}
+
+@media (min-width:769px) {
+  .wr label:hover {
+    background-color: var(--old-rose);
+  }
+}
+
+html {
+  background-color: var(--buff);
+}
+
+.wr {
+  width: 40%;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5% auto;
+}
+
+.wr label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.5rem 1.5rem;
+  position: relative;
+  z-index: 20;
+  display: block;
+  height: 2rem;
+  color: var(--vanilla);
+  text-shadow: 1px 1px 1px rgba(255,255,255, 0.8);
+  line-height: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
