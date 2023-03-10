@@ -17,7 +17,40 @@
   .wr label:hover {
     background-color: #8f696b;
   }
+
+  .wr article:hover,
+  .wr input:hover ~ article {
+  transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  height: 15rem;
+  }
+
+  .wr:hover {
+    cursor: pointer;
+  }
+
+  .wr input:hover ~ label .plus_div {
+    transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
+    height: 0.5rem; 
+    width: 2rem !important;
+  }
+
+  .wr input:hover ~ label .plus_div::after {
+    transition: 0.1s;
+    height: 0; 
+  }
+
+  .wr div:hover .plus_div {
+    transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
+    height: 0.5rem; 
+    width: 2rem !important;
+  }
+
+  .wr div:hover .plus_div::after {
+    transition: 0.1s;
+    height: 0; 
+  }
 }
+
 
 html {
   background-color: var(--buff);
@@ -37,17 +70,21 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0.5rem 1.5rem;
   position: relative;
+  font-weight: bold;
   z-index: 20;
   display: block;
   height: 2rem;
   color: var(--vanilla);
   background: #c36161;
-  text-shadow: 1px 1px 1px rgba(255,255,255, 0.8);
   line-height: 2rem;
-  font-size: 1.5rem;
+  font-size:  calc(1rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));;
   cursor: pointer;
 
   border-radius: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 input:checked + label,
@@ -75,10 +112,71 @@ input:checked + label:hover {
 
 .wr input:checked ~ article {
   transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-  box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
-  height: 8rem;
+  height: 25rem;
+}
+
+.wr input label:hover {
+  transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  height: 25rem;
 }
 
 .wr  div {
   margin-bottom: 1rem;
+  width: 100%;
+}
+
+article img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.plus {
+  position:relative;
+  border: 1px dotted white;
+  width: 2rem !important;
+  height: 2rem;
+  background-color: black;
+  box-sizing: border-box;
+  margin-bottom: 0 !important;
+}
+
+.acc_img {
+  height: 80%;
+}
+
+.wr input:checked + label .acc_img {
+  content: url(./minus.svg) !important;
+  animation: backwards 0.3s linear;
+}
+
+.plus_div {
+  transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
+  background: #CD6D45;
+  height: 100%; 
+  width: 0.5rem !important;
+  position: relative;
+  margin-bottom: 0 !important;
+}
+
+.plus_div:after {
+  transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
+  content: "";
+  height: 0.5rem; 
+  width: 2rem !important;
+  background: #CD6D45;
+  position: absolute; 
+  left: -150%; 
+  top: 40%;
+  }
+
+.wr input:checked + label .plus_div {
+  transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
+  height: 0.5rem; 
+  width: 2rem !important;
+}
+
+.wr input:checked + label .plus_div:after {
+  transition: 0.1s;
+  height: 0; 
 }
