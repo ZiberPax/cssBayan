@@ -28,27 +28,23 @@
     cursor: pointer;
   }
 
-  .wr input:hover ~ label .plus_div {
-    transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
-    height: 0.5rem; 
-    width: 2rem !important;
+  .wr input:hover ~ label .plus {
+    transform: rotate(45deg);
   }
 
-  .wr input:hover ~ label .plus_div::after {
+  /* .wr input:hover ~ label .plus_div::after {
     transition: 0.1s;
     height: 0; 
+  } */
+
+  .wr div:hover .plus {
+    transform: rotate(45deg);
   }
 
-  .wr div:hover .plus_div {
-    transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
-    height: 0.5rem; 
-    width: 2rem !important;
-  }
-
-  .wr div:hover .plus_div::after {
+  /* .wr div:hover .plus_div::after {
     transition: 0.1s;
     height: 0; 
-  }
+  } */
 }
 
 
@@ -131,16 +127,6 @@ article img {
   object-fit: contain;
 }
 
-.plus {
-  position:relative;
-  border: 1px dotted white;
-  width: 2rem !important;
-  height: 2rem;
-  background-color: black;
-  box-sizing: border-box;
-  margin-bottom: 0 !important;
-}
-
 .acc_img {
   height: 80%;
 }
@@ -150,7 +136,11 @@ article img {
   animation: backwards 0.3s linear;
 }
 
-.plus_div {
+.plus {
+  height: 100%;
+}
+
+/* .plus_div {
   transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
   background: #CD6D45;
   height: 100%; 
@@ -168,15 +158,19 @@ article img {
   position: absolute; 
   left: -150%; 
   top: 40%;
-  }
+  } */
 
-.wr input:checked + label .plus_div {
+/* .wr input:checked + label .plus_div {
   transition: 0.5s cubic-bezier(0, 0, 0.91, 0.29);
   height: 0.5rem; 
   width: 2rem !important;
+} */
+
+.wr input:checked + label .plus {
+  transform: rotate(45deg);
 }
 
-.wr input:checked + label .plus_div:after {
+/* .wr input:checked + label .plus_div:after {
   transition: 0.1s;
   height: 0; 
-}
+} */
