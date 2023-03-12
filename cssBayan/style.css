@@ -1,27 +1,27 @@
 :root {
-  --sage: #A3A380;
-  --vanilla: #D6CE93;
-  --biege: #EFEBCE;
-  --buff: #D8A48F;
-  --old-rose: #BB8588;
+  --sage: #a3a380;
+  --vanilla: #d6ce93;
+  --biege: #efebce;
+  --buff: #d8a48f;
+  --old-rose: #bb8588;
 }
 
-*, 
+*,
 *::after,
 *::before {
   margin: 0;
   transition: 0.3s;
 }
 
-@media (min-width:769px) {
+@media (min-width: 769px) {
   .wr label:hover {
     background-color: #8f696b;
   }
 
   .wr article:hover,
   .wr input:hover ~ article {
-  transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-  height: 15rem;
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    height: 15rem;
   }
 
   .wr:hover {
@@ -29,7 +29,7 @@
   }
 
   .wr input:hover ~ label .plus {
-    transform: rotate(45deg);
+    transform: rotate(135deg);
   }
 
   /* .wr input:hover ~ label .plus_div::after {
@@ -38,7 +38,7 @@
   } */
 
   .wr div:hover .plus {
-    transform: rotate(45deg);
+    transform: rotate(135deg);
   }
 
   /* .wr div:hover .plus_div::after {
@@ -47,13 +47,12 @@
   } */
 }
 
-
 html {
   background-color: var(--buff);
 }
 
 .wr {
-  width: 40%;
+  width: 50%;
   height: 50rem;
   display: flex;
   flex-direction: column;
@@ -73,10 +72,10 @@ html {
   color: var(--vanilla);
   background: #c36161;
   line-height: 2rem;
-  font-size:  calc(1rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));;
+  font-size: calc(1rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));
   cursor: pointer;
 
-  border-radius: 5px;
+  border-radius: 0.3rem;
 
   display: flex;
   justify-content: space-between;
@@ -116,7 +115,7 @@ input:checked + label:hover {
   height: 25rem;
 }
 
-.wr  div {
+.wr div {
   margin-bottom: 1rem;
   width: 100%;
 }
@@ -167,10 +166,36 @@ article img {
 } */
 
 .wr input:checked + label .plus {
-  transform: rotate(45deg);
+  transform: rotate(135deg);
 }
 
 /* .wr input:checked + label .plus_div:after {
   transition: 0.1s;
   height: 0; 
 } */
+
+@media (max-width: 1000px) {
+  .wr {
+    width: 70%;
+  }
+
+  .wr article:hover,
+  .wr input:hover ~ article {
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    height: 12rem;
+  }
+
+  .wr label {
+    font-size: calc(1.3rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));
+  }
+}
+
+@media (max-width: 545px) {
+  .wr {
+    width: 70%;
+  }
+
+  .wr label {
+    font-size: calc(1.3rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));
+  }
+}
