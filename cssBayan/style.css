@@ -8,16 +8,21 @@
 
 * {
   margin: 0;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
-@media (min-width: 769px) {
-  .wr label:hover {
+@media (hover: hover) {
+  .wr input + label:hover {
     background-color: #8f696b;
   }
 
-  .wr article:hover,
-  .wr input:hover ~ article {
+  .wr .accordion_label:hover,
+  .wr input:hover ~ .accordion_label {
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    height: 15rem;
+  }
+
+  .wr input:hover ~ .accordion_label {
     transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
     height: 15rem;
   }
@@ -27,11 +32,11 @@
   }
 
   .wr input:hover ~ label .plus {
-    transform: rotate(135deg);
+    transform: rotate(225deg);
   }
 
   .wr div:hover .plus {
-    transform: rotate(135deg);
+    transform: rotate(225deg);
   }
 }
 
@@ -50,7 +55,7 @@ html {
     margin: 5% auto;
   }
 
-  .wr label {
+  .wr input + label {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 0.5rem 1.5rem;
     position: relative;
@@ -61,7 +66,7 @@ html {
     color: var(--vanilla);
     background: #c36161;
     line-height: 2rem;
-    font-size: calc(1rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));
+    font-size: calc(1.2rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));
     cursor: pointer;
 
     border-radius: 0.3rem;
@@ -77,7 +82,7 @@ html {
     color: #3d7489;
   }
 
-  .wr label:hover {
+  .wr input + label:hover {
     background: #815053;
   }
 
@@ -85,16 +90,17 @@ html {
     display: none;
   }
 
-  .wr article {
+  .wr .accordion_label {
     margin-top: -0.0625rem;
     overflow: hidden;
     height: 0rem;
     position: relative;
     z-index: 10;
     transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    cursor: pointer;
   }
 
-  .wr input:checked ~ article {
+  .wr input:checked ~ .accordion_label {
     transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
     height: 25rem;
   }
@@ -104,28 +110,43 @@ html {
     height: 25rem;
   }
 
+  .wr input .accordion_label:hover {
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    height: 25rem;
+  }
+
   .wr div {
     margin-bottom: 1rem;
     width: 100%;
   }
 
-  article img {
+  /* article img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  } */
+
+  .meme {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
-  .acc_img {
-    height: 80%;
-  }
-
-  .wr input:checked + label .acc_img {
-    content: url(./minus.svg) !important;
-    animation: backwards 0.3s linear;
+  .accordion_label img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .plus {
     height: 100%;
+  }
+
+  .wr .accordion_label {
+    display: block;
+    height: 0 ;
+    padding: 0;
+    transition: 0.3s;
   }
 
   .wr input:checked + label .plus {
@@ -138,12 +159,6 @@ html {
     width: 70%;
   }
 
-  .wr article:hover,
-  .wr input:hover ~ article {
-    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
-    height: 12rem;
-  }
-
   .wr label {
     font-size: calc(1.3rem + (40 - 16) * (100vw - 48rem) / (1920 - 768));
   }
@@ -151,7 +166,7 @@ html {
 
 @media (max-width: 545px) {
   .wr {
-    width: 70%;
+    width: 85%;
   }
 
   .wr label {
